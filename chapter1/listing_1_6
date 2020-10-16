@@ -1,0 +1,15 @@
+(def post-headers [	{:title "first one ever" :length 430}
+			{:title "second baby step" :length 650}
+			{:title "three is company" :length 720}
+			{:title "four for the road" :length 190}
+			{:title "five again" :length 280}])
+
+(defn long-post-headers [threshold-length headers]
+  (let [is-long? (fn [header]
+		   (> (header :length) threshold-length))]
+	(filter is-long? headers)))
+
+(defn long-post-titles [threshold-length headers]
+  (map :title (long-post-headers threshold-length headers)))
+
+(long-post-titles 300 post-headers)
