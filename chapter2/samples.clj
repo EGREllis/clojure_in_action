@@ -68,4 +68,4 @@
 		 total		(apply + number-pets)]
 	 (/ total (count users))))
 
-;; Continue from page 37 
+
